@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/skeppe-consulting/precache-manifest.8f051640c7eeaffdd2483d731dbb7f88.js"
+  "/skeppe-consulting/precache-manifest.a0703d9ea68ee6d8d4ff5f0ef586ab5b.js"
 );
 
 workbox.clientsClaim();
