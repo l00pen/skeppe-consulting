@@ -1,14 +1,14 @@
 {
-  "main.css": "/skeppe-consulting/static/css/main.6601525a.chunk.css",
-  "main.js": "/skeppe-consulting/static/js/main.1d4f56dd.chunk.js",
-  "main.js.map": "/skeppe-consulting/static/js/main.1d4f56dd.chunk.js.map",
-  "static/js/1.f03e8ae8.chunk.js": "/skeppe-consulting/static/js/1.f03e8ae8.chunk.js",
-  "static/js/1.f03e8ae8.chunk.js.map": "/skeppe-consulting/static/js/1.f03e8ae8.chunk.js.map",
-  "runtime~main.js": "/skeppe-consulting/static/js/runtime~main.e309591b.js",
-  "runtime~main.js.map": "/skeppe-consulting/static/js/runtime~main.e309591b.js.map",
-  "static/media/slipgatan2.m4v": "/skeppe-consulting/static/media/slipgatan2.e8e21b72.m4v",
-  "static/css/main.6601525a.chunk.css.map": "/skeppe-consulting/static/css/main.6601525a.chunk.css.map",
-  "index.html": "/skeppe-consulting/index.html",
-  "precache-manifest.ff4e7d808a7b5011544b94b15a667f53.js": "/skeppe-consulting/precache-manifest.ff4e7d808a7b5011544b94b15a667f53.js",
-  "service-worker.js": "/skeppe-consulting/service-worker.js"
+  "main.css": "/static/css/main.6601525a.chunk.css",
+  "main.js": "/static/js/main.b0a0fd0a.chunk.js",
+  "main.js.map": "/static/js/main.b0a0fd0a.chunk.js.map",
+  "static/js/1.f03e8ae8.chunk.js": "/static/js/1.f03e8ae8.chunk.js",
+  "static/js/1.f03e8ae8.chunk.js.map": "/static/js/1.f03e8ae8.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
+  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "static/media/slipgatan2.m4v": "/static/media/slipgatan2.e8e21b72.m4v",
+  "static/css/main.6601525a.chunk.css.map": "/static/css/main.6601525a.chunk.css.map",
+  "index.html": "/index.html",
+  "precache-manifest.95c1ac03ff9e02486a0c64ba9b9d42f4.js": "/precache-manifest.95c1ac03ff9e02486a0c64ba9b9d42f4.js",
+  "service-worker.js": "/service-worker.js"
 }
