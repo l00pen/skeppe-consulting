@@ -13,7 +13,7 @@ class App extends Component {
         <div className={'App__border'}>
           <h1 className={'App__header'}>SKEPPE CONSULTING</h1>
           <p>
-            {`contact: ${email}`}
+            {email}
           </p>
         </div>
       </div>
