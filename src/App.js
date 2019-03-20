@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
+import styled from 'styled-components/macro'
 import Background from './Background';
 
-import './App.css';
 
 class App extends Component {
   render() {
