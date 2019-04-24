@@ -53,7 +53,7 @@ class Projects extends Component {
     return (
       <ProjectRoot>
         <TitleRoot>
-          <Title>Brands I worked with</Title>
+          <Title>Brands I've worked with</Title>
         </TitleRoot>
         <LogoGroup>
           <ImgLogo src={namely} />
