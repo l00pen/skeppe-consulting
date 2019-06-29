@@ -1,16 +1,43 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import slipgatan from './slipgatan2.m4v';
+import slipgatanPictureLow from './slipgatanLow.png';
+import slipgatanPicture from './slipgatan.png';
 
 import './styles.css';
 
-class Background extends Component {
-  render() {
-    return (
-      <video className="Background" autoPlay loop id="video-background" muted plays-inline={"true"}>
-        <source src={slipgatan} type="video/mp4" />
-      </video>
-    );
+const Background = () => {
+  const [isMobileDevice, setIsMobileDevice] = useState(undefined);
+
+  useEffect(() => {
+    const checkForIsMobileDevice = () => {
+      return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    };
+
+    console.log(checkForIsMobileDevice())
+    setIsMobileDevice(checkForIsMobileDevice())
+  });
+
+  if (isMobileDevice === undefined) {
+    return null
   }
+
+  if (isMobileDevice) {
+    return <img className="BackgroundImage" src={slipgatanPicture} />
+  }
+
+  return (
+    <video
+      className="Background"
+      autoPlay
+      loop
+      id="video-background"
+      muted
+      plays-inline={"true"}
+      poster={slipgatanPictureLow}
+    >
+      <source src={slipgatan} type="video/mp4" />
+    </video>
+  );
 }
 
 export default Background;
