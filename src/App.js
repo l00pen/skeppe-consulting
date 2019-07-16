@@ -3,6 +3,9 @@ import styled from 'styled-components/macro'
 import Background from './Background';
 import Projects from './Projects';
 
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+
 const AppRoot = styled.div`
   text-align: center;
   font-weight: 200;
@@ -22,16 +25,6 @@ const AppTitle = styled.h1`
   @media only screen and (min-width: 768px) {
     font-size: 5vw;
   } 
-`;
-
-const AppHeader = styled.header`
-  height: 2vh;
-  z-index: 1;
-`;
-
-const AppFooter = styled.footer`
-  height: 2vh;
-  z-index: 1;
 `;
 
 const AppContent = styled.main`
@@ -66,7 +59,7 @@ class App extends Component {
     return (
       <AppRoot>
         <Background />
-        <AppHeader />
+        <Header />
         <AppContent>
           <Section>
             <AppTitle>SKEPPE CONSULTING</AppTitle>
@@ -79,7 +72,7 @@ class App extends Component {
             <Projects />
           </Section>
         </AppContent>
-        <AppFooter />
+        <Footer />
       </AppRoot>
     );
   }
