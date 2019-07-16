@@ -1,9 +1,9 @@
 {
-  "main.css": "/static/css/main.d5d62770.chunk.css",
-  "main.js": "/static/js/main.72ebffcc.chunk.js",
-  "main.js.map": "/static/js/main.72ebffcc.chunk.js.map",
-  "static/js/1.629ab9f4.chunk.js": "/static/js/1.629ab9f4.chunk.js",
-  "static/js/1.629ab9f4.chunk.js.map": "/static/js/1.629ab9f4.chunk.js.map",
+  "main.css": "/static/css/main.131f3f56.chunk.css",
+  "main.js": "/static/js/main.a0a40170.chunk.js",
+  "main.js.map": "/static/js/main.a0a40170.chunk.js.map",
+  "static/js/1.6cdef422.chunk.js": "/static/js/1.6cdef422.chunk.js",
+  "static/js/1.6cdef422.chunk.js.map": "/static/js/1.6cdef422.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/slipgatan2.m4v": "/static/media/slipgatan2.e8e21b72.m4v",
@@ -12,8 +12,8 @@
   "static/media/hemnet_logo.svg": "/static/media/hemnet_logo.c0747291.svg",
   "static/media/56k.png": "/static/media/56k.ce77bb67.png",
   "static/media/slipgatan.png": "/static/media/slipgatan.68864f70.png",
-  "static/css/main.d5d62770.chunk.css.map": "/static/css/main.d5d62770.chunk.css.map",
+  "static/css/main.131f3f56.chunk.css.map": "/static/css/main.131f3f56.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.60facce1ea0990a02be6099681319159.js": "/precache-manifest.60facce1ea0990a02be6099681319159.js",
+  "precache-manifest.6359c805dd7600b1a0e9cb7097139483.js": "/precache-manifest.6359c805dd7600b1a0e9cb7097139483.js",
   "service-worker.js": "/service-worker.js"
 }
