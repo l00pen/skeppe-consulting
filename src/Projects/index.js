@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components/macro'
+import styled from 'styled-components'
 import soundcloud from './soundcloud2.png';
 import namely from './namely-logo.png';
 import hemnet from './hemnet_logo.svg';
@@ -26,13 +26,6 @@ const TitleRoot = styled.div`
   width: fit-content;
   margin: 0 auto 1em;
 `
-
-const Divider = styled.hr`
-  width: 100%;
-  border: 0;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.4);
-`;
 
 const Title = styled.h3`
   font-weight: 100;

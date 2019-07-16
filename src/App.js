@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components/macro'
+import styled, { ThemeProvider } from 'styled-components'
+import {ContentSection} from 'styleguide/dist/lib';
 import Background from './Background';
 import Projects from './Projects';
 
@@ -41,39 +42,29 @@ const Divider = styled.hr`
   height: 1px;
 `;
 
-const Section = styled.section`
-  background-color: rgba(245,245,245,0.7);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1 0 auto;
-  padding: 0.5em;
-  min-height: 20em;
-`;
-
-
 class App extends Component {
   render() {
     const email = 'lovisa@skeppeconsulting.com';
     return (
-      <AppRoot>
-        <Background />
-        <Header />
-        <AppContent>
-          <Section>
-            <AppTitle>SKEPPE CONSULTING</AppTitle>
-            <p>
-              {email}
-            </p>
-          </Section>
-          <Divider />
-          <Section>
-            <Projects />
-          </Section>
-        </AppContent>
-        <Footer />
-      </AppRoot>
+      <ThemeProvider theme={{ mode: 'light', layout: 'cozy' }}>
+        <AppRoot>
+          <Background />
+          <Header />
+          <AppContent>
+            <ContentSection>
+              <AppTitle>SKEPPE CONSULTING</AppTitle>
+              <p>
+                {email}
+              </p>
+            </ContentSection>
+            <Divider />
+            <ContentSection>
+              <Projects />
+            </ContentSection>
+          </AppContent>
+          <Footer />
+        </AppRoot>
+      </ThemeProvider>
     );
   }
 }
