@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styled, { ThemeProvider } from 'styled-components/macro'
-import ContentSection from 'styleguide/dist/ContentSection';
+import styled, { ThemeProvider } from 'styled-components'
+import {ContentSection} from 'styleguide/dist/lib';
 import Background from './Background';
 import Projects from './Projects';
 
