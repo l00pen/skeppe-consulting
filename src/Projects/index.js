@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+
+import {
+  Title,
+  TitleRoot
+} from '../Components/Text';
+
 import soundcloud from './soundcloud2.png';
 import namely from './namely-logo.png';
 import hemnet from './hemnet_logo.svg';
+import trustly from './trustly.svg';
 import fiftySixK from './56k.png';
 
 const ImgLogo = styled.img`
@@ -19,17 +26,6 @@ const ProjectRoot = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`;
-
-const TitleRoot = styled.div`
-  position: relative;
-  width: fit-content;
-  margin: 0 auto 1em;
-`
-
-const Title = styled.h3`
-  font-weight: 100;
-  margin-bottom: 0.2em;
 `;
 
 const LogoGroup = styled.div`
@@ -49,10 +45,21 @@ class Projects extends Component {
           <Title>{'Brands I\'ve worked with'}</Title>
         </TitleRoot>
         <LogoGroup>
-          <ImgLogo src={namely} />
-          <ImgLogo src={soundcloud} />
-          <ImgLogo src={fiftySixK} />
-          <ImgLogo src={hemnet} />
+          <a href="https://www.namely.com" target="_blank" rel="noopener noreferrer">
+            <ImgLogo src={namely} />
+          </a>
+          <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">
+            <ImgLogo src={soundcloud} />
+          </a>
+          <a href="https://56kdigital.com" target="_blank" rel="noopener noreferrer">
+            <ImgLogo src={fiftySixK} />
+          </a>
+          <a href="https://hemnet.se" target="_blank" rel="noopener noreferrer">
+            <ImgLogo src={hemnet} />
+          </a>
+          <a href="https://trustly.net" target="_blank" rel="noopener noreferrer">
+            <ImgLogo src={trustly} />
+          </a>
         </LogoGroup>
       </ProjectRoot>
     );

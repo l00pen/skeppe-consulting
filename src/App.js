@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components'
-import {ContentSection} from 'styleguide/dist/lib';
 import Background from './Background';
 import Projects from './Projects';
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import {
+  AppTitle,
+  Title
+} from './Components/Text';
 
 const AppRoot = styled.div`
   text-align: center;
@@ -16,16 +19,6 @@ const AppRoot = styled.div`
   flex-direction: column;
 
   z-index: 0;
-`;
-
-const AppTitle = styled.h1`
-  color: rgba(0, 0, 0, 1);
-  font-size: 15vw;
-  font-weight: 100;
-
-  @media only screen and (min-width: 768px) {
-    font-size: 5vw;
-  } 
 `;
 
 const AppContent = styled.main`
@@ -42,9 +35,21 @@ const Divider = styled.hr`
   height: 1px;
 `;
 
+const ContentSection = styled.section`
+  background-color: rgba(245,245,245,0.7);
+  color: rgba(3,2,20,0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  padding: 1em;
+  min-height: 20em;
+`;
+
 class App extends Component {
   render() {
-    const email = 'lovisa@skeppeconsulting.com';
+    const email = 'lovisa.skeppe@gmail.com';
     return (
       <ThemeProvider theme={{ mode: 'light', layout: 'cozy' }}>
         <AppRoot>
@@ -53,6 +58,10 @@ class App extends Component {
           <AppContent>
             <ContentSection>
               <AppTitle>SKEPPE CONSULTING</AppTitle>
+            </ContentSection>
+            <Divider />
+            <ContentSection>
+              <Title>Contact</Title>
               <p>
                 {email}
               </p>
