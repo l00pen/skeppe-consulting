@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components'
 import Background from './Background';
 import Projects from './Projects';
+import Profile from './Profile';
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -65,10 +66,21 @@ class App extends Component {
               <p>
                 {email}
               </p>
+              <Title>
+                <a href="https://github.com/l00pen">Check out my repos on github</a>
+              </Title>
+              <Title>
+                <a href="https://docs.google.com/document/d/e/2PACX-1vRNRfupR3nSkqAGKG9A2FIqJNZ-OoiRYxEe25NnBhUEfODNbG4dOBJs-XlFGPyuErHST0DkopUos1SK/pub">
+                  official profile
+                </a>
+              </Title>
             </ContentSection>
             <Divider />
             <ContentSection>
               <Projects />
+            </ContentSection>
+            <ContentSection>
+              <Profile />
             </ContentSection>
           </AppContent>
           <Footer />
