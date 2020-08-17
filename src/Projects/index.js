@@ -31,7 +31,8 @@ const ProjectRoot = styled.div`
 const LogoGroup = styled.div`
   display: flex;
   justify-content: space-between;
-
+  flex-wrap: wrap;
+  
   @media only screen and (min-width: 768px) {
     justify-content: center;
   } 

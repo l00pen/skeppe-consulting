@@ -13,7 +13,6 @@ const Background = () => {
       return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
     };
 
-    console.log(checkForIsMobileDevice())
     setIsMobileDevice(checkForIsMobileDevice())
   });
 
