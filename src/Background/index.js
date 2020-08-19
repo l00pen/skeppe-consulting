@@ -14,7 +14,7 @@ const Background = () => {
     };
 
     setIsMobileDevice(checkForIsMobileDevice())
-  });
+  }, []);
 
   if (isMobileDevice === undefined) {
     return null
