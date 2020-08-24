@@ -6,20 +6,15 @@ import {
   TitleRoot
 } from '../Text';
 
+import {
+  ImgLogo,
+} from '../Images';
+
 import soundcloud from './soundcloud2.png';
 import namely from './namely-logo.png';
 import hemnet from './hemnet_logo.svg';
 import trustly from './trustly.svg';
 import fiftySixK from './56k.png';
-
-const ImgLogo = styled.img`
-  height: 25px;
-  margin: 0;
-
-  @media only screen and (min-width: 768px) {
-    margin: 0 1em;
-  } 
-`;
 
 const ProjectRoot = styled.div`
   width: 100%;

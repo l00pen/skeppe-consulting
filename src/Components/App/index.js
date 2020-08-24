@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import Background from '../Background';
 import Projects from '../Projects';
+import WhatCanIDo from '../WhatCanIDo';
 import { lightTheme, darkTheme } from "../Themes"
 import Header from '../Header';
 import Footer from '../Footer';
@@ -157,7 +158,7 @@ const App = () => {
           </ContentSection>
           <Divider />
           <ContentSection>
-            <Projects />
+            <WhatCanIDo />
           </ContentSection>
         </AppContent>
         <Footer />
