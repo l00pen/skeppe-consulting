@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components'
-import Background from './Background';
-import Projects from './Projects';
 
-import { lightTheme, darkTheme } from "./Components/Themes"
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Background from '../Background';
+import Projects from '../Projects';
+import { lightTheme, darkTheme } from "../Themes"
+import Header from '../Header';
+import Footer from '../Footer';
 import {
   AppTitle,
   Title,
   Text,
-} from './Components/Text';
+} from '../Text';
 
 const AppRoot = styled.div`
   text-align: center;

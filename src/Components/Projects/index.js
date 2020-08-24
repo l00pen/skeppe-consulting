@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {
   Title,
   TitleRoot
-} from '../Components/Text';
+} from '../Text';
 
 import soundcloud from './soundcloud2.png';
 import namely from './namely-logo.png';
