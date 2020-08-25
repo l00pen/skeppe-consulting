@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components/macro'
 
-import Link from '../Link';
-import Navigation from '../Navigation';
+import { Link } from "react-router-dom";
 
 const HeaderStyled = styled.header`
   z-index: 1;
