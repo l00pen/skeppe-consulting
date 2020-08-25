@@ -41,7 +41,8 @@ const Background = () => {
   }
 
   if (isMobileDevice) {
-    return <BackgroundImage src={slipgatanPicture} alt='view over sky and houses' />
+    // return <BackgroundImage src={slipgatanPicture} alt='view over sky and houses' />
+    return null;
   }
 
   return (
