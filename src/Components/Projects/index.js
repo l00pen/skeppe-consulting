@@ -13,7 +13,7 @@ import trustly from './trustly.svg';
 import fiftySixK from './56k.png';
 
 const ImgLogo = styled.img`
-  height: 25px;
+  height: 4.5vw;
   margin: 0;
 
   @media only screen and (min-width: 768px) {
@@ -30,15 +30,11 @@ const ProjectRoot = styled.div`
 
 const LogoGroup = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   
   & > a {
-    margin: 0.5em 0 0 0;
-  }
-
-  @media only screen and (min-width: 768px) {
-    justify-content: center;
+    margin: 0.5em 0.5em 0;
   } 
 `;
 
