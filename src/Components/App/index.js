@@ -37,6 +37,7 @@ const AppRoot = styled.div`
   height: 100vh;
   flex-direction: column;
   z-index: 0;
+  overflow: hidden;
 `;
 
 const AppContent = styled.main`

@@ -8,8 +8,9 @@ import slipgatanPicture from './slipgatan.png';
 const BackgroundImage = styled.img`
   position: fixed;
   z-index: -100;
-  object-fit: cover;
+  // object-fit: cover;
   clip-path: polygon(100% 0, 0 100%, 0 0);
+  -webkit-clip-path: polygon(100% 0, 0 100%, 0 0);
 `;
 
 const BackgroundStyled = styled.video`
@@ -22,6 +23,7 @@ const BackgroundStyled = styled.video`
   height: auto;
   z-index: -100;
   clip-path: polygon(100% 0, 0 100%, 0 0);
+  -webkit-clip-path: polygon(100% 0, 0 100%, 0 0);
 `;
 
 const Background = () => {
