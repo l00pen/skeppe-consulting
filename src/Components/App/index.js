@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import Background from '../Background';
 import Projects from '../Projects';
@@ -17,6 +23,7 @@ const AppRoot = styled.div`
   font-weight: 200;
 
   display: flex;
+  justify-content: center;
   height: 100vh;
   flex-direction: column;
 
@@ -27,6 +34,10 @@ const AppContent = styled.main`
   overflow: auto;
   flex: 1;
   padding: 5vh 5vw;
+  display: flex;
+  justify-content: center;
+  opacity: ${(props) => { return props.isNavOpen ? 0 : 1}};
+  transition: opacity 0.3s ease-in;
 `;
 
 const Divider = styled.hr`
@@ -39,7 +50,7 @@ const Divider = styled.hr`
 
 const ContentSection = styled.section`
   background-color: ${({ theme }) => theme.background};
-  flex: 1 0 auto;
+  flex: 1 0 0;
   padding: 0.5em;
   min-height: 20em;
   display: flex;
@@ -112,6 +123,11 @@ const App = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
   }
 
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleIsNavOpen = () => {
+    setIsNavOpen(!isNavOpen)
+  }
 
   useEffect(() => {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -129,39 +145,47 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <AppRoot>
-        <Background />
-        <Header />
-        <AppContent>
-          <ContentSection>
-            <AppTitle>SKEPPE CONSULTING</AppTitle>
-            <ContentSectionContent>
-              <Text>
-                Experience in building and maintaining large web applications including CI/CD pipelines, hosting and integrating with internal and external API's. Optimizing for speed, scale and code readability.
-              </Text>
-              <Text>
-                Worked with JavaScript and in the React ecosystem since 2014 and have a passion for modularization and readable code.
-              </Text>
-            </ContentSectionContent>
-          </ContentSection>
-          <Divider />
-          <ContentSection>
-            <Title>Contact</Title>
-            <ContentSectionContent>
-              <Contact>
-                <ContactCards>{email}</ContactCards>
-                <ContactCards href={github}>github profile</ContactCards>
-                <ContactCards href={profileGoogleDocs}>CV</ContactCards>
-              </Contact>
-            </ContentSectionContent>  
-          </ContentSection>
-          <Divider />
-          <ContentSection>
-            <Projects />
-          </ContentSection>
-        </AppContent>
-        <Footer />
-      </AppRoot>
+      <Router>
+        <AppRoot>
+          <Background />
+          <Header isNavOpen={isNavOpen} toggleIsNavOpen={toggleIsNavOpen} />
+          <AppContent isNavOpen={isNavOpen}>
+            <Switch>
+              <Route path="/contact">
+                <ContentSection>
+                  <Title>Contact</Title>
+                  <ContentSectionContent>
+                    <Contact>
+                      <ContactCards>{email}</ContactCards>
+                      <ContactCards href={github}>github profile</ContactCards>
+                      <ContactCards href={profileGoogleDocs}>CV</ContactCards>
+                    </Contact>
+                  </ContentSectionContent>
+                </ContentSection>                
+              </Route>
+              <Route path="/work">
+                <ContentSection>
+                  <Projects />
+                </ContentSection>
+              </Route>
+              <Route path="/">
+                <ContentSection>
+                  <AppTitle>SKEPPE CONSULTING</AppTitle>
+                  <ContentSectionContent>
+                    <Text>
+                      Experience in building and maintaining large web applications including CI/CD pipelines, hosting and integrating with internal and external API's. Optimizing for speed, scale and code readability.
+                    </Text>
+                    <Text>
+                      Worked with JavaScript and in the React ecosystem since 2014 and have a passion for modularization and readable code.
+                    </Text>
+                  </ContentSectionContent>
+                </ContentSection>
+              </Route>
+            </Switch>
+          </AppContent>
+          <Footer />
+        </AppRoot>
+      </Router>
     </ThemeProvider>
   );
 }
