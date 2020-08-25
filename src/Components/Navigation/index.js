@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const NavigationRoot = styled.nav`
-  height: 1em;
   width: 100%;
   align-content: flex-start;
   display: flex;
+  width: 100%;
+  margin-left: ${(props) => { return props.isOpen ? 0 : '-100%'}};
+  transition: margin 0.5s ease-in;
 `;
 
 const Button = styled.button`
@@ -21,19 +23,17 @@ const Button = styled.button`
   }
 `;
 
-class Navigation extends Component {
-  render() {
-    return (
-      <NavigationRoot>
-        <Button>
-          Projects
-        </Button>
-        <Button>
-          What can I do for you
-        </Button>
-      </NavigationRoot>
-    );
-  }
+const Navigation = ({ isOpen }) => {
+  return (
+    <NavigationRoot isOpen={isOpen}>
+      <Button>
+        Projects
+      </Button>
+      <Button>
+        Who am I?
+      </Button>
+    </NavigationRoot>
+  );
 }
 
 export default Navigation;
