@@ -54,7 +54,6 @@ const NavigationRoot = styled.nav`
 
 const NavLinkWrapper = styled.div`
   transition: background 0.5s ease-in;
-  font-size: 1em;
   height: auto;
   cursor: pointer;
   flex: 1 1 0;

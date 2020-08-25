@@ -13,7 +13,6 @@ import { lightTheme, darkTheme } from "../Themes"
 import Header from '../Header';
 import Footer from '../Footer';
 import {
-  AppTitle,
   Title,
   Text,
 } from '../Text';
@@ -23,6 +22,10 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${props => props.theme.bodyBackground};
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 16px;
   }
 `
 
@@ -114,7 +117,7 @@ const App = () => {
               </Route>
               <Route path="/">
                 <ContentSection>
-                  <AppTitle>SKEPPE CONSULTING</AppTitle>
+                  <Title>SKEPPE CONSULTING</Title>
                   <ContentSectionContent>
                     <Text>
                       Experience in building and maintaining large web applications including CI/CD pipelines, hosting and integrating with internal and external API's. Optimizing for speed, scale and code readability.

@@ -33,6 +33,10 @@ const LogoGroup = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   
+  & > a {
+    margin: 0.5em 0 0 0;
+  }
+
   @media only screen and (min-width: 768px) {
     justify-content: center;
   } 
@@ -42,9 +46,7 @@ class Projects extends Component {
   render() {
     return (
       <ProjectRoot>
-        <TitleRoot>
-          <Title>{'Brands I\'ve worked with'}</Title>
-        </TitleRoot>
+        <Title>{'Brands I\'ve worked with'}</Title>
         <LogoGroup>
           <a href="https://www.namely.com" target="_blank" rel="noopener noreferrer">
             <ImgLogo src={namely} />

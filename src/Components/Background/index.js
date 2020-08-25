@@ -9,6 +9,7 @@ const BackgroundImage = styled.img`
   position: fixed;
   z-index: -100;
   object-fit: cover;
+  clip-path: polygon(100% 0, 0 100%, 0 0);
 `;
 
 const BackgroundStyled = styled.video`
