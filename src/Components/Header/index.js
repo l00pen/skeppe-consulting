@@ -1,26 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+
+import Link from '../Link';
 import Navigation from '../Navigation';
 
 const HeaderStyled = styled.header`
   z-index: 1;
   display: flex;
   flex-direction: column;
-  // padding: 5vh 5vw;
   box-sizing: border-box;
-  // position: relative;
-  // top: 0;
   width: ${({ isOpen }) => isOpen ? '100%' : 'auto'};
   height: ${({ isOpen }) => isOpen ? '100%' : 'auto'};
-  // transition: width 0.5s linear;
-  // transition: height 0.5s linear;
-  // transition-delay: 1s;
 `;
 
 const NavButton = styled.div`
@@ -68,18 +58,20 @@ const NavLinkWrapper = styled.div`
   font-size: 1em;
   height: auto;
   cursor: pointer;
-  &:focus {
-    outline: none;
-  }
   flex: 1 1 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  &:focus {
+    outline: none;
+  }
+
   & a {
     font-size: 10vw;
     text-decoration: none;
   }
+
   &:nth-child(2n) {
     background: ${(props) => { return props.isOpen ? 'rgba(0, 0, 0, 0.7)' : 'transparent'}};
   }
@@ -99,12 +91,6 @@ const NavLinkWrapper = styled.div`
   }
 `;
 
-const LinkSpan = styled.span`
-  // margin-left: ${(props) => { return props.isOpen ? 0 : 'calc(-100% - 5vw)'}};
-  // transition: margin 0.5s ease-in;
-  // transition-delay: 0.5s;
-`
-
 const Header = ({ isNavOpen, toggleIsNavOpen }) => {
   return (
     <HeaderStyled isOpen={isNavOpen}>
@@ -112,23 +98,17 @@ const Header = ({ isNavOpen, toggleIsNavOpen }) => {
       <NavigationRoot isOpen={isNavOpen}>
         <NavLinkWrapper isOpen={isNavOpen}>
           <Link to="/" onClick={toggleIsNavOpen}>
-            <LinkSpan isOpen={isNavOpen}>
-              Who am I?
-            </LinkSpan>
+            Who am I?
           </Link> 
         </NavLinkWrapper>
         <NavLinkWrapper isOpen={isNavOpen}>
           <Link to="/work" onClick={toggleIsNavOpen}>
-            <LinkSpan isOpen={isNavOpen}>
-              Work
-            </LinkSpan>
+            Work
           </Link>
         </NavLinkWrapper>
         <NavLinkWrapper isOpen={isNavOpen}>
           <Link to="/contact" onClick={toggleIsNavOpen}>
-            <LinkSpan isOpen={isNavOpen}>
-             Contact
-            </LinkSpan>
+            Contact
           </Link>
         </NavLinkWrapper>
       </NavigationRoot>

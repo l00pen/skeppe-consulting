@@ -1,9 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
 import slipgatan from './slipgatan2.m4v';
 import slipgatanPictureLow from './slipgatanLow.png';
 import slipgatanPicture from './slipgatan.png';
 
-import './styles.css';
+const BackgroundImage = styled.img`
+  position: fixed;
+  z-index: -100;
+  object-fit: cover;
+`;
+
+const BackgroundStyled = styled.video`
+  position: fixed;
+  right: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  clip-path: polygon(100% 0, 0 100%, 0 0);
+`;
 
 const Background = () => {
   const [isMobileDevice, setIsMobileDevice] = useState(undefined);
@@ -21,12 +39,11 @@ const Background = () => {
   }
 
   if (isMobileDevice) {
-    return <img className="BackgroundImage" src={slipgatanPicture} alt='view over sky and houses'/>
+    return <BackgroundImage src={slipgatanPicture} alt='view over sky and houses' />
   }
 
   return (
-    <video
-      className="Background"
+    <BackgroundStyled
       autoPlay
       loop
       id="video-background"
@@ -35,7 +52,7 @@ const Background = () => {
       poster={slipgatanPictureLow}
     >
       <source src={slipgatan} type="video/mp4" />
-    </video>
+    </BackgroundStyled>
   );
 }
 

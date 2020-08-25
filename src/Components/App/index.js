@@ -18,15 +18,21 @@ import {
   Text,
 } from '../Text';
 
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${props => props.theme.bodyBackground};
+  }
+`
+
 const AppRoot = styled.div`
   text-align: center;
   font-weight: 200;
-
   display: flex;
   justify-content: center;
   height: 100vh;
   flex-direction: column;
-
   z-index: 0;
 `;
 
@@ -146,6 +152,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <Router>
+        <GlobalStyle />
         <AppRoot>
           <Background />
           <Header isNavOpen={isNavOpen} toggleIsNavOpen={toggleIsNavOpen} />
