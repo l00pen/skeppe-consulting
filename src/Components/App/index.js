@@ -11,7 +11,6 @@ import Projects from '../Projects';
 import Contact from '../Contact';
 import { lightTheme, darkTheme } from "../Themes"
 import Header from '../Header';
-import Footer from '../Footer';
 import {
   Title,
   Text,
@@ -43,11 +42,14 @@ const AppRoot = styled.div`
 const AppContent = styled.main`
   overflow: auto;
   flex: 1;
-  padding: 5vh 5vw;
   display: flex;
   justify-content: center;
   opacity: ${(props) => { return props.isNavOpen ? 0 : 1}};
   transition: opacity 0.3s ease-in;
+
+  @media only screen and (min-width: 768px) {
+    padding: 5vh 5vw;
+  }
 `;
 
 const ContentSection = styled.section`
@@ -131,7 +133,6 @@ const App = () => {
               </Route>
             </Switch>
           </AppContent>
-          <Footer />
         </AppRoot>
       </Router>
     </ThemeProvider>

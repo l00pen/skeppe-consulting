@@ -25,7 +25,6 @@ const NavButton = styled.div`
   align-items: center;
 
   position: absolute;
-  margin: calc(5vh - 15px) calc(5vw - 15px);
   z-index: 1;
 
   &:hover {
@@ -37,6 +36,10 @@ const NavButton = styled.div`
   &:focus {
     outline: none;
     box-shadow: 0px 0px 1em #0066ff;
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin: calc(5vh - 15px) calc(5vw - 15px);
   }
 `;
 
