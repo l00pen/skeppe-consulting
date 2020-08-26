@@ -5,6 +5,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 import Background from '../Background';
 import Projects from '../Projects';
@@ -44,8 +45,10 @@ const AppContent = styled.main`
   flex: 1;
   display: flex;
   justify-content: center;
-  opacity: ${(props) => { return props.isNavOpen ? 0 : 1}};
-  transition: opacity 0.3s ease-in;
+
+  & > div {
+    flex: 1 0 0;
+  }
 
   @media only screen and (min-width: 768px) {
     padding: 5vh 5vw;
@@ -54,9 +57,9 @@ const AppContent = styled.main`
 
 const ContentSection = styled.section`
   background-color: ${({ theme }) => theme.background};
-  flex: 1 0 0;
   padding: 0.5em;
-  min-height: 20em;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,35 +106,39 @@ const App = () => {
         <AppRoot>
           <Background />
           <Header isNavOpen={isNavOpen} toggleIsNavOpen={toggleIsNavOpen} />
-          <AppContent isNavOpen={isNavOpen}>
-            <Switch>
-              <Route path="/contact">
-                <ContentSection>
-                  <Title>Contact</Title>
-                  <ContentSectionContent>
-                    <Contact theme={theme} />
-                  </ContentSectionContent>
-                </ContentSection>                
-              </Route>
-              <Route path="/work">
-                <ContentSection>
-                  <Projects />
-                </ContentSection>
-              </Route>
-              <Route path="/">
-                <ContentSection>
-                  <Title>SKEPPE CONSULTING</Title>
-                  <ContentSectionContent>
-                    <Text>
-                      Experience in building and maintaining large web applications including CI/CD pipelines, hosting and integrating with internal and external API's. Optimizing for speed, scale and code readability.
-                    </Text>
-                    <Text>
-                      Worked with JavaScript and in the React ecosystem since 2014 and have a passion for modularization and readable code.
-                    </Text>
-                  </ContentSectionContent>
-                </ContentSection>
-              </Route>
-            </Switch>
+          <AppContent>
+            { !isNavOpen &&
+              <Fade>
+                <Switch>
+                  <Route path="/contact">
+                    <ContentSection>
+                      <Title>Contact</Title>
+                      <ContentSectionContent>
+                        <Contact theme={theme} />
+                      </ContentSectionContent>
+                    </ContentSection>                
+                  </Route>
+                  <Route path="/work">
+                    <ContentSection>
+                      <Projects />
+                    </ContentSection>
+                  </Route>
+                  <Route path="/">
+                    <ContentSection>
+                      <Title>SKEPPE CONSULTING</Title>
+                      <ContentSectionContent>
+                        <Text>
+                          Experience in building and maintaining large web applications including CI/CD pipelines, hosting and integrating with internal and external API's. Optimizing for speed, scale and code readability.
+                        </Text>
+                        <Text>
+                          Worked with JavaScript and in the React ecosystem since 2014 and have a passion for modularization and readable code.
+                        </Text>
+                      </ContentSectionContent>
+                    </ContentSection>
+                  </Route>
+                </Switch>
+              </Fade>
+            }
           </AppContent>
         </AppRoot>
       </Router>

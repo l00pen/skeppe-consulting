@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 
-import {
-  Title,
-  TitleRoot
-} from '../Text';
+import { Title } from '../Text';
 
 import soundcloud from './soundcloud2.png';
 import namely from './namely-logo.png';

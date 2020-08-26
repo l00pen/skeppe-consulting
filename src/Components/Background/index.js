@@ -8,8 +8,6 @@ import slipgatanPicture from './slipgatan.png';
 const BackgroundImage = styled.img`
   position: fixed;
   z-index: -100;
-  clip-path: polygon(34% 100%, 19% 100%, 0px 0px);
-  -webkit-clip-path: polygon(34% 100%, 19% 100%, 0px 0px);
 `;
 
 const BackgroundStyled = styled.video`
@@ -41,8 +39,7 @@ const Background = () => {
   }
 
   if (isMobileDevice) {
-    // return <BackgroundImage src={slipgatanPicture} alt='view over sky and houses' />
-    return null;
+    return <BackgroundImage src={slipgatanPicture} alt='view over sky and houses' />;
   }
 
   return (
