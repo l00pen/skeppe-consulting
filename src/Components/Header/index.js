@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro'
 
+import { Slide } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 const HeaderStyled = styled.header`
@@ -8,8 +9,6 @@ const HeaderStyled = styled.header`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: ${({ isOpen }) => isOpen ? '100%' : 'auto'};
-  height: ${({ isOpen }) => isOpen ? '100%' : 'auto'};
 `;
 
 const NavButton = styled.div`
@@ -47,25 +46,29 @@ const NavigationRoot = styled.nav`
   width: 100%;
   align-content: flex-start;
   display: flex;
-  margin-left: ${(props) => { return props.isOpen ? 0 : 'calc(-100% - 5vw)'}};
-  transition: margin 0.5s ease-in;
   height:100%;
   flex-direction:column;
   box-sizing: border-box;
   position: absolute;
-`;
 
-const NavLinkWrapper = styled.div`
-  transition: background 0.5s ease-in;
-  height: auto;
-  cursor: pointer;
-  flex: 1 1 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  & > div {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  &:focus {
-    outline: none;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & > div:nth-child(even) {
+    background: ${(props) => { return props.isOpen ? 'rgba(0, 0, 0, 0.7)' : 'transparent'}};
+  }
+
+  & > div:nth-child(odd) {
+    background: ${(props) => { return props.isOpen ? 'rgba(255, 255, 255, 0.7)' : 'transparent'}};
   }
 
   & a {
@@ -73,46 +76,37 @@ const NavLinkWrapper = styled.div`
     text-decoration: none;
   }
 
-  &:nth-child(2n) {
-    background: ${(props) => { return props.isOpen ? 'rgba(0, 0, 0, 0.7)' : 'transparent'}};
-  }
-
   // Because React Router DOM
-  &:nth-child(2n) > a {
+  & > div:nth-child(even) a {
     color: rgba(255, 255, 255, 1);
-  } 
-
-  &:nth-child(2n+1) {
-    background: ${(props) => { return props.isOpen ? 'rgba(255, 255, 255, 0.7)' : 'transparent'}};
   }
 
   // Because React Router DOM
-  &:nth-child(2n+1) > a {
+  & > div:nth-child(odd) a {
     color: black;
   }
 `;
 
 const Header = ({ isNavOpen, toggleIsNavOpen }) => {
+  const navList = [
+    {label: 'Who am I?', route: '/'},
+    {label: 'Work', route: '/work'},
+    {label: 'Contact', route: '/contact'},
+  ];
   return (
     <HeaderStyled isOpen={isNavOpen}>
       <NavButton onClick={toggleIsNavOpen} isOpen={isNavOpen} />
-      <NavigationRoot isOpen={isNavOpen}>
-        <NavLinkWrapper isOpen={isNavOpen}>
-          <Link to="/" onClick={toggleIsNavOpen}>
-            Who am I?
-          </Link> 
-        </NavLinkWrapper>
-        <NavLinkWrapper isOpen={isNavOpen}>
-          <Link to="/work" onClick={toggleIsNavOpen}>
-            Work
-          </Link>
-        </NavLinkWrapper>
-        <NavLinkWrapper isOpen={isNavOpen}>
-          <Link to="/contact" onClick={toggleIsNavOpen}>
-            Contact
-          </Link>
-        </NavLinkWrapper>
-      </NavigationRoot>
+      { isNavOpen &&
+        <NavigationRoot isOpen={isNavOpen}>
+          <Slide cascade direction={'left'}>    
+            { navList.map(({ label, route }) => (
+              <Link to={route} onClick={toggleIsNavOpen} key={route}>
+                {label}
+              </Link> 
+            ))}
+          </Slide>
+        </NavigationRoot>
+      }
     </HeaderStyled>
   );
 }
